@@ -1,0 +1,2 @@
+[console_scripts]
+mortgage-pricing-tool = mortgage_pricing_tool.app:main

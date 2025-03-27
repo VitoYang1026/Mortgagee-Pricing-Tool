@@ -1,0 +1,126 @@
+Metadata-Version: 2.2
+Name: mortgage_pricing_tool
+Version: 1.0.0
+Summary: A tool for comparing mortgage pricing between AAA and investor ratesheets
+Home-page: https://github.com/yourusername/mortgage_pricing_tool
+Author: Mortgage Pricing Team
+Author-email: example@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit==1.31.0
+Requires-Dist: pandas==2.1.0
+Requires-Dist: numpy==1.26.0
+Requires-Dist: openpyxl==3.1.2
+Requires-Dist: matplotlib==3.8.0
+Requires-Dist: seaborn==0.13.0
+Requires-Dist: plotly==5.18.0
+Requires-Dist: scikit-learn==1.3.0
+Requires-Dist: pytest==7.4.0
+Requires-Dist: pytest-cov==4.1.0
+Requires-Dist: black==23.7.0
+Requires-Dist: isort==5.12.0
+Requires-Dist: flake8==6.1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 抵押贷款定价比较工具
+
+这是一个用于比较AAA和投资者抵押贷款定价表的工具，可以帮助用户分析不同情境下的价格差异和利润率。
+
+## 功能特点
+
+- 解析AAA和投资者Excel定价表
+- 生成所有可能的借款人场景组合
+- 计算最终价格和利润率
+- 过滤和分析数据
+- 反向定价分析
+- 异常检测
+- 结构验证
+
+## 安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/yourusername/mortgage_pricing_tool.git
+cd mortgage_pricing_tool
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 安装包
+pip install -e .
+```
+
+## 使用方法
+
+### 通过Streamlit运行Web界面
+
+```bash
+streamlit run mortgage_pricing_tool/app.py
+```
+
+### 上传文件
+
+1. 上传AAA DSCR Excel文件
+2. 上传投资者DSCR Excel文件
+3. 点击"处理文件"按钮
+
+### 筛选和分析
+
+使用左侧的筛选条件来过滤数据，查看不同情境下的价格差异和利润率。
+
+## 项目结构
+
+```
+mortgage_pricing_tool/
+├── core/                  # 核心功能模块
+│   ├── __init__.py
+│   ├── parser.py          # 解析Excel文件
+│   ├── combiner.py        # 生成场景组合
+│   ├── calculator.py      # 计算价格和利润率
+│   ├── analyzer.py        # 数据分析
+│   ├── reverse_optimizer.py # 反向定价分析
+│   ├── outlier_detector.py # 异常检测
+│   └── structure_checker.py # 结构验证
+├── utils/                 # 工具函数
+│   ├── __init__.py
+│   ├── constants.py       # 常量定义
+│   └── io.py              # 输入输出工具
+├── tests/                 # 测试文件
+├── docs/                  # 文档
+├── app.py                 # 主应用程序
+├── requirements.txt       # 依赖包
+├── setup.py               # 安装配置
+└── README.md              # 说明文档
+```
+
+## 部署
+
+### 本地部署
+
+按照上述安装步骤在本地部署和运行。
+
+### 云端部署
+
+可以使用Streamlit Cloud、Heroku或其他云平台部署：
+
+#### Streamlit Cloud
+
+1. 将代码推送到GitHub仓库
+2. 登录[Streamlit Cloud](https://streamlit.io/cloud)
+3. 选择您的仓库和主应用程序文件(app.py)
+4. 点击部署
+
+## 许可证
+
+MIT
